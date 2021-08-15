@@ -1,6 +1,4 @@
 import * as cheerio from "cheerio";
-const requestPromise = require("request-promise")
-import * as path from "path";
 const puppeteer = require("puppeteer");
 import { Response, Request, NextFunction } from "express";
 import * as _ from "lodash";
