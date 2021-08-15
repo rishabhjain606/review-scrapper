@@ -12,9 +12,10 @@ export const getTigerDirectReview= async(req: Request, res: Response, next: Next
             let browser = null;
             try {
                 browser = await puppeteer.launch({
-                    headless: true,
-                    ignoreHTTPSErrors: true,
-                    timeout: 60000
+                    args: [
+                        '--no-sandbox',
+                        '--disable-setuid-sandbox',
+                    ],
                 })
             } catch (err) {
                 console.log("Error in opening puppeteer");
