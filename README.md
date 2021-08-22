@@ -21,4 +21,6 @@ npm start
 
 - Navigate to `http://localhost:4000` to check if it is working
 
-- For fetching reviews of website  `http://localhost:4000/getReviews?reviewUrl=<URL>`
+- For fetching reviews of website  `http://localhost:4000/getReviews?reviewUrl=<URL>&page=<pageNo>`
+
+- Page number (integer) can be passed for pagination. Default value if 1, i.e. first page of review will be displayed. 
