@@ -10,7 +10,7 @@ export const getTigerDirectReview = async (req: Request, res: Response, next: Ne
         if (!_.isNil(url) && !_.isEmpty(url) && url.indexOf("https://www.tigerdirect.com/") > -1) {
             let params = ParseHelper.parseURL(url);
             if (params && params["EdpNo"]) {
-                let pageNumber = req.query.page && req.query.page <= 0 ? req.query.page : 1;
+                let pageNumber = req.query.page && req.query.page <= 0 ? req.query.page.match(/\d/g).join("") : 1;
 
                 url = `https://www.tigerdirect.com/applications/searchtools/item-details.asp?EdpNo=${params["EdpNo"]}&pagenumber=${pageNumber - 1}&RSort=1&csid=ITD&recordsPerPage=5`
                 const content = await ParseHelper.getHTML(url)
